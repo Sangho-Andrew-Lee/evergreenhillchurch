@@ -39,11 +39,11 @@ class AppController extends Controller {
     public function beforeFilter() {
 
         //Check if Yummly API keys are entered
-        $yummlyApi = Configure::read('api.recipes.yummly');
-        if ($yummlyApi['app_id'] == 'Yummly App ID' || $yummlyApi['app_key'] == 'Yummly App Key') {
-            echo 'Please enter Yummly API ID and API Key into the file ' . APP . 'Config' . DS . 'bootstrap.php';
-            exit;
-        }
+//        $yummlyApi = Configure::read('api.recipes.yummly');
+//        if ($yummlyApi['app_id'] == 'Yummly App ID' || $yummlyApi['app_key'] == 'Yummly App Key') {
+//            echo 'Please enter Yummly API ID and API Key into the file ' . APP . 'Config' . DS . 'bootstrap.php';
+//            exit;
+//        }
 
         //Use cache or not
         $this->cache = Configure::read('cache');
