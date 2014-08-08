@@ -1,0 +1,15 @@
+**Credits:**
+
+- Bootstrap - http://getbootstrap.com
+- jQuery - http://jquery.com
+- HTML5Shiv - @afarkas @jdalton @jon_neal @rem
+- Respond - https://github.com/scottjehl/Respond
+- Pattern - http://subtlepatterns.com/
+- Font awesome icon - http://fortawesome.github.io/Font-Awesome/
+- Photos - http://pixabay.com
+- prettyPhoto - http://www.no-margin-for-errors.com
+- Isotope - http://isotope.metafizzy.co
+- Revolution Slider - http://eightmedia.github.com/hammer.js
+- Flex Slider - http://www.woothemes.com/flexslider/
+- CakePHP framework - http://cakephp.org
+- Yummly API - http://yummly.com

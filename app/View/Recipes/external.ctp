@@ -1,0 +1,1 @@
+<iframe id="external-frame" src="<?php echo $recipe['direction']['url']; ?>"></iframe>
