@@ -302,7 +302,7 @@
                      data-endelementdelay="0.08"
                      data-endspeed="500"
                      style="z-index: 4; max-width: auto; max-height: auto; white-space: nowrap;">
-                     Hamburger
+                     Church
                 </div>
                 <!-- LAYER NR. 5 -->
                 <div class="tp-caption finewide_verysmall_white_mw white customin customout tp-resizeme text-right paragraph"

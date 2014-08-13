@@ -31,52 +31,30 @@ App::uses('Controller', 'Controller');
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
+	public $components = array(
 
-    public $components = array('Yummly');
+		'Session',
 
-    public $cache = false;
+		'Auth' => array(
 
-    public function beforeFilter() {
+			'authenticate' => array(
 
-        //Check if Yummly API keys are entered
-//        $yummlyApi = Configure::read('api.recipes.yummly');
-//        if ($yummlyApi['app_id'] == 'Yummly App ID' || $yummlyApi['app_key'] == 'Yummly App Key') {
-//            echo 'Please enter Yummly API ID and API Key into the file ' . APP . 'Config' . DS . 'bootstrap.php';
-//            exit;
-//        }
+				'Form' => array('fields' => array('username' => 'email'))
 
-        //Use cache or not
-        $this->cache = Configure::read('cache');
+			),
 
-        //Read the categories from the config file in /app/Config/bootstrap.php
-        $categories = Configure::read('categories');
+			'loginRedirect' => array('controller' => 'activities', 'action' => 'index'),
 
-        //Read new recipes from cache first
-        $newRecipes = Cache::read('new_recipes', 'short_5_mins');
+			'logoutRedirect' => array('controller' => 'home', 'action' => 'index')
 
-        //If not cached, then REST it and cache it
-        if (!$this->cache || $newRecipes === false) {
+		),
 
-            //Randomize the the order of the categories
-            $randomCategories = array_rand($categories, 8);
+		'Cookie'
 
-            //Each of the category, we are going to use the Yummly API to retrieve the recipe.
-            foreach ($randomCategories as $categoryUri => $categoryName) {
+	);
 
-                $singleRecipe = $this->Yummly->recipes($categoryName, 1);
-                $newRecipes[] = $singleRecipe[0];
+   public function beforeFilter() {
 
-            }
-
-            //Cache this result in the cake level so it can reduce API calls to Yummly.
-            Cache::write('new_recipes', $newRecipes, 'short_5_mins');
-
-        }
-
-        $this->set(array(
-            'newRecipes' => $newRecipes
-        ));
-
-    }
+   }
 
 }

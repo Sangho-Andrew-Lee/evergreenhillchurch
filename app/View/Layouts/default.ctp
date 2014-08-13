@@ -1,10 +1,3 @@
-<?php
-$famousDishes = array();
-$randomNewRecipes = array_rand($newRecipes, 6);
-foreach ($randomNewRecipes as $randomNewRecipe) {
-    $famousDishes[] = $newRecipes[$randomNewRecipe];
-}
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,7 +21,13 @@ foreach ($randomNewRecipes as $randomNewRecipe) {
             'font-awesome.min.css',
             'less-style.css',
             'style.css',
-            'ie-style.css'
+            'ie-style.css',
+            'signup.css'
+        ));
+
+        echo $this->Html->script(array(
+			  'jquery.validate.min.js',
+			  'users-add.js'
         ));
     ?>
 
@@ -44,7 +43,7 @@ foreach ($randomNewRecipes as $randomNewRecipe) {
 <!-- Header Start -->
 <div class="header">
 <div class="container">
-<!-- Header top area content -->
+
 <div class="header-top">
     <div class="row">
         <div class="col-md-6 col-sm-6">
@@ -57,18 +56,20 @@ foreach ($randomNewRecipes as $randomNewRecipe) {
         <div class="col-md-6 col-sm-6">
             <!-- Header top right content search box -->
             <div class=" header-search">
-                <form class="form" role="form" method="get" action="/search">
+<!--                <form class="form" role="form" method="get" action="/search">
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Search..." name="q">
-                            <span class="input-group-btn">
-                                <button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
-                            </span>
+								 <span class="input-group-btn">
+									  <button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
+								 </span>
                     </div>
-                </form>
+                </form>-->
             </div>
         </div>
     </div>
 </div>
+
+
 <div class="row">
     <div class="col-md-4 col-sm-5">
         <!-- Link -->
@@ -176,6 +177,9 @@ foreach ($randomNewRecipes as $randomNewRecipe) {
                             </ul>
                         </li>
                         <li><?php echo $this->Html->link($this->Html->image('nav-menu/nav6.jpg', array('class' => 'img-responsive', 'alt' => '')) . ' About', array('controller' => 'pages', 'action' => 'staticPage', 'about_us'), array('escape' => false)); ?></li>
+							  <li>
+								  <?php echo $this->Html->link($this->Html->image('nav-menu/nav3.jpg', array('class' => 'img-responsive', 'alt' => '')) . 'Sign Up', array('controller' => 'users', 'action' => 'add'), array('escape' => false)); ?>
+							  </li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->

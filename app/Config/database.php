@@ -65,9 +65,9 @@ class DATABASE_CONFIG {
 		'datasource' => 'Database/Mysql',
 		'persistent' => false,
 		'host' => 'localhost',
-		'login' => 'user',
-		'password' => 'password',
-		'database' => 'database_name',
+		'login' => 'evergreenhill',
+		'password' => 'Evergreenhill_chruch2014!',
+		'database' => 'evergreenhill',
 		'prefix' => '',
 		//'encoding' => 'utf8',
 	);

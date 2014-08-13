@@ -22,35 +22,21 @@ App::uses('AppController', 'Controller');
 
 class HomeController extends AppController {
 
-    public $uses = array();
+	public function beforeFilter() {
 
-    public $components = array('Yummly');
+		parent::beforeFilter();
 
-    public function index() {
+		$this->Auth->allow('index');
 
-        //Read the popular categories from the config file in /app/Config/bootstrap.php
-        $popularCategories = Configure::read('popular_categories');
+	}
 
-        //Read popular recipes from cache first
-        $popularRecipes = Cache::read('popular_recipes', 'short_5_mins');
+	public function index() {
 
-        //If not cached, then REST it and cache it
-        if (!$this->cache || $popularRecipes === false) {
+		$this->set(array(
 
-            foreach ($popularCategories as $popularCategory => $popularCategoryOptions) {
+			'title_for_layout' => 'Ever Greenhill Church'
 
-                $popularRecipes[$popularCategory] = $this->Yummly->recipes($popularCategory, $popularCategoryOptions['count']);
+		));
 
-            }
-
-            Cache::write('popular_recipes', $popularRecipes, 'short_5_mins');
-
-        }
-
-        $this->set(array(
-            'title_for_layout' => 'ChefMemo - Ultimate Collection of Recipes',
-            'popularCategories' => $popularCategories,
-            'popularRecipes' => $popularRecipes
-        ));
-    }
+	}
 }
