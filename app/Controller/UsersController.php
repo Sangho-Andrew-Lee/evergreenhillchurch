@@ -43,8 +43,6 @@ class UsersController extends AppController {
 
 		$this->Cookie->httpOnly = true;
 
-		$this->api = (isset($this->params['api']) && $this->params['api']) ? true : false;
-
 	}
 
 	/*
@@ -165,26 +163,10 @@ class UsersController extends AppController {
 	/*
 	  * Sign Up module
 	  *
-	  * API: /api/v#/users/add.json
-	  * @param password
-	  * @param email
-	  * @param birth_date DATE
-	  * @param sex {'m', 'f'}
-	  * @param weight FLOAT
-	  * @param height FLOAT
-	  * @param street_address
-	  * @param city
-	  * @param state
-	  * @param zipcode
-	  * @param device_id
-	  *
 	  * Web: /sign-up
 	  * @param password
 	  * @param email
 	  * @param birth_date DATE
-	  * @param sex {'m', 'f'}
-	  * @param weight FLOAT
-	  * @param height FLOAT
 	  * @param street_address
 	  * @param city
 	  * @param state
@@ -192,182 +174,54 @@ class UsersController extends AppController {
 	  */
 	public function add() {
 
-		//API handler
-		if ($this->api) {
+		if ($this->request->is('post')) {
 
-			if ($this->request->is('post')) {
+			$this->User->create(); //Initiate a new DB insert
 
-				list($errors, $allKeysExist) = $this->Custom->checkPostKeys('required.users.add', $this->request->data);
+			$this->User->set($this->request->data); //Input POSTed data to User model
 
-				$this->request->data['User'] = $this->request->data;
+			if ($this->User->validates()) { //If User model successfully validated the input data, then INSERT
 
-				//Initiate a new DB insert to User model
-				$this->User->create();
+				if ($this->User->save($this->request->data)) {
 
-				//Generate a pseudo unique uid
-				$this->request->data['User']['uid'] = substr(sha1(uniqid(mt_rand(), true)), 0, 10);
+					//Email verification
+					$user = $this->User->getUserByEmail($this->request->data['User']['email']);
 
-				$address = array('street_address', 'city', 'state', 'zipcode');
+					//Send out activation email
+					$result = $this->__sendActivationEmail($user);
 
-				foreach($address  as $k) {
+					if ($result !== false) {
 
-					if (empty($this->request->data['User'][$k]))
-					{
+						$this->Session->setFlash('<a class="close" data-dismiss="alert" href="#">&times;</a>Thank you for signing up with mophie SmartBand. An e-mail has been sent to you with instructions on how to verify your email to activate your account.', 'default', array('class' => 'alert alert-success'));
 
-						unset($this->request->data['User'][$k]);
-
-					}
-
-				}
-
-				//Generate a refresh token for the userc
-				$this->request->data['User']['refresh_token'] = substr(sha1(uniqid(mt_rand(), true)), 0, 20);
-
-				$this->User->set($this->request->data); //Input POSTed data to User model
-
-				//If User model successfully validated the input data
-				if ($allKeysExist && $this->User->validates())
-				{
-
-					if (isset($this->User->data['User']['device_id'])) {
-
-						if ($this->User->data['User']['device_id']) {
-
-							$this->User->data['UsersProduct']['device_id'] = $this->User->data['User']['device_id'];
-
-						}
-
-						unset($this->User->data['User']['device_id']);
-
-					}
-
-					//Save data to DB
-					if ($this->User->save()) {
-
-						$accessToken = $this->__createAccessToken($this->User->id);
-
-						$response['data'] = array(
-
-							'uid' => $this->request->data['User']['uid'],
-
-							'refresh_token' => $this->request->data['User']['refresh_token'],
-
-							'access_token' => $accessToken['Token']['access_token'],
-
-							'token_time' => $accessToken['Token']['time']
-
-						);
-
-					}
-
-					//Cannot save data
-					else
-
-					{
-
-						$this->response->statusCode(500);
-
-						$errors[] = "Cannot save data";
-
-					}
-
-				}
-
-				//Else if validation failed
-				else
-				{
-
-					$this->response->statusCode(422);
-
-					//Flatten the validation error messages
-					$validationErrors = $this->Custom->validationErrorMessages($this->User->validationErrors);
-
-					//Push validation errors to the errors array
-					$errors = array_merge($errors, $validationErrors);
-
-				}
-
-			}
-
-			//Set errors block to response
-			if (!empty($errors)) {
-
-				$response['errors'] = $errors;
-
-			}
-
-			$this->set(array(
-
-				'response' => $response
-
-			));
-
-		}
-
-		//Web handler
-		else
-		{
-
-			if ($this->request->is('post')) {
-
-				$this->User->create(); //Initiate a new DB insert
-
-				$this->User->set($this->request->data); //Input POSTed data to User model
-
-				if ($this->User->validates()) { //If User model successfully validated the input data, then INSERT
-
-					//Generate a pseudo unique uid
-					$__uid = substr(sha1(uniqid(mt_rand(), true)), 0, 10);
-
-					$this->request->data['User']['uid'] = $__uid;
-
-					//Generate a refresh token for the user
-					$this->request->data['User']['refresh_token'] = substr(sha1(uniqid(mt_rand(), true)), 0, 20);
-
-					if ($this->User->save($this->request->data)) {
-
-						//Create an pair of new refresh token and access token
-						$this-> __createAccessToken($this->User->id);
-
-						//Email verification
-						$user = $this->User->getUserByEmail($this->request->data['User']['email']);
-
-						//Send out activation email
-						$result = $this->__sendActivationEmail($user);
-
-						if ($result !== false) {
-
-							$this->Session->setFlash('<a class="close" data-dismiss="alert" href="#">&times;</a>Thank you for signing up with mophie SmartBand. An e-mail has been sent to you with instructions on how to verify your email to activate your account.', 'default', array('class' => 'alert alert-success'));
-
-							$this->redirect(array('controller' => 'users', 'action' => 'login'));
-
-						} else {
-
-							$this->Session->setFlash('<a class="close" data-dismiss="alert" href="#">&times;</a>The account activation code could not be sent. Please contact the administrator.', 'default', array('class' => 'alert alert-error'));
-
-							$this->redirect('/');
-
-						}
+						$this->redirect(array('controller' => 'users', 'action' => 'login'));
 
 					} else {
 
-						$this->Session->setFlash('<a class="close" data-dismiss="alert" href="#">&times;</a>The user could not be saved. Please try again.', 'default', array('class' => 'alert alert-error'));
+						$this->Session->setFlash('<a class="close" data-dismiss="alert" href="#">&times;</a>The account activation code could not be sent. Please contact the administrator.', 'default', array('class' => 'alert alert-error'));
+
+						$this->redirect('/');
 
 					}
+
+				} else {
+
+					$this->Session->setFlash('<a class="close" data-dismiss="alert" href="#">&times;</a>The user could not be saved. Please try again.', 'default', array('class' => 'alert alert-error'));
 
 				}
 
 			}
 
-			$this->set(array(
-
-				'title_for_layout' => 'Smart Band - Sign up'
-
-			));
-
 		}
 
+		$this->set(array(
+
+			'title_for_layout' => 'Sign up'
+
+		));
+
 	}
+
 
 	/*
 	  * Edit Personal Info module

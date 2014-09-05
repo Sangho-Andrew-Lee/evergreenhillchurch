@@ -21,13 +21,11 @@
             'font-awesome.min.css',
             'less-style.css',
             'style.css',
-            'ie-style.css',
-            'signup.css'
+            'ie-style.css'
         ));
 
         echo $this->Html->script(array(
-			  'jquery.validate.min.js',
-			  'users-add.js'
+			  'jquery.js'
         ));
     ?>
 

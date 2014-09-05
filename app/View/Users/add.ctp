@@ -1,255 +1,281 @@
 <?php
 
 //Load signup.css to head
-//echo $this->Html->css('signup', null, array('block' => 'css'));
+echo $this->Html->css('signup');
 
 //Load jquery validate plugin to the bottom_scripts
-//echo $this->Html->script(array('jquery.validate.min.js', 'users-add'), array('block' => 'bottom_scripts'));
-
+echo $this->Html->script(
+			array(
+				'jquery.validate.min.js',
+				'users-add.js'
+			)
+		);
 ?>
 
 <div id="page-users-add">
 
-<div class="container">
+	<div class="container">
 
-<div class="span12 box_wrapper">
+		<div class="span12 box_wrapper">
 
-<div class="span12 box">
+			<div class="span12 box"><div>
 
-<div>
+			<div class="head">
 
-<div class="head">
+				<h4>Create your account</h4>
 
-	<h4>Create your account</h4>
+			</div>
 
-</div>
+			<div class="form">
 
-<div class="form">
+			<?php
 
-<?php
+			echo $this->Form->create('User', array(
 
-echo $this->Form->create('User', array(
+				'id' => 'form-users-add',
 
-	'id' => 'form-users-add',
+				'url' => array('controller' => 'users', 'action' => 'add'),
 
-	'url' => array('controller' => 'users', 'action' => 'add'),
+				'class' => 'form-horizontal',
 
-	'class' => 'form-horizontal',
+				'inputDefaults' => array(
 
-	'inputDefaults' => array(
+					'format' => array('before', 'label', 'between', 'input', 'error', 'after'),
 
-		'format' => array('before', 'label', 'between', 'input', 'error', 'after'),
+					'div' => array('class' => 'control-group'),
 
-		'div' => array('class' => 'control-group'),
+					'label' => array('class' => 'control-label'),
 
-		'label' => array('class' => 'control-label'),
+					'between' => '<div class="controls">',
 
-		'between' => '<div class="controls">',
+					'after' => '</div>',
 
-		'after' => '</div>',
+					'error' => array('attributes' => array('wrap' => 'span', 'class' => 'help-inline'))
 
-		'error' => array('attributes' => array('wrap' => 'span', 'class' => 'help-inline'))
+				)
 
-	)
+			));
 
-));
+//			echo $this->Form->input('first_name', array(
+//
+//				'class' => 'required fistname',
+//
+//				'label' => array('class' => 'control-label required'),
+//
+//				'id' => 'form-users-add-first-name',
+//
+//				'placeholder' => 'First Name'
+//
+//			));
+//
+//			echo $this->Form->input('last_name', array(
+//
+//				'class' => 'required lastname',
+//
+//				'label' => array('class' => 'control-label required'),
+//
+//				'id' => 'form-users-add-last-name',
+//
+//				'placeholder' => 'Last Name'
+//
+//			));
 
-echo $this->Form->input('email', array(
+			echo $this->Form->input('email', array(
 
-	'class' => 'required email',
+				'class' => 'required email',
 
-	'label' => array('class' => 'control-label required'),
+				'label' => array('class' => 'control-label required'),
 
-	'id' => 'form-users-add-email',
+				'id' => 'form-users-add-email',
 
-	'placeholder' => 'Email'
+				'placeholder' => 'Email'
 
-));
+			));
 
-echo $this->Form->input('password', array(
+			echo $this->Form->input('password', array(
 
-	'class' => 'required',
+				'class' => 'required',
 
-	'label' => array('class' => 'control-label required'),
+				'label' => array('class' => 'control-label required'),
 
-	'id' => 'form-users-add-password',
+				'id' => 'form-users-add-password',
 
-	'minLength' => '6',
+				'minLength' => '6',
 
-	'placeholder' => 'Password'
+				'placeholder' => 'Password'
 
-));
+			));
 
-echo $this->Form->input('birth_date', array(
+			echo $this->Form->input('birth_date', array(
 
-	'div' => array('class' => 'control-group age'),
+				'div' => array('class' => 'control-group age'),
 
-	'label' => array('class' => 'control-label required'),
+				'label' => array('class' => 'control-label required'),
 
-	'id' => 'form-users-add-age',
+				'id' => 'form-users-add-age',
 
-	'type' => 'date',
+				'type' => 'date',
+
+				'dateFormat' => 'YMD',
 
-	'dateFormat' => 'YMD',
+				'minYear' => date('Y') - 120,
 
-	'minYear' => date('Y') - 120,
+				'maxYear' => date('Y'),
 
-	'maxYear' => date('Y'),
+				'monthNames' => false,
 
-	'monthNames' => false,
+				'class' => 'users-birth-date-select'
 
-	'class' => 'users-birth-dae-select'
+			));
 
-));
 
 
+			echo $this->Form->input('street_address', array(
 
-echo $this->Form->input('street_address', array(
+				'label' => array('class' => 'control-label street-address'),
 
-	'label' => array('class' => 'control-label street-address'),
+				'id' => 'form-users-add-street-address',
 
-	'id' => 'form-users-add-street-address',
+				'placeholder' => 'Street Address'
 
-	'placeholder' => 'Street Address'
-
-));
-
-echo $this->Form->input('city', array(
-
-	'label' => array('class' => 'control-label'),
+			));
 
-	'id' => 'form-users-add-city',
+			echo $this->Form->input('city', array(
 
-	'placeholder' => 'City'
+				'label' => array('class' => 'control-label'),
 
-));
+				'id' => 'form-users-add-city',
 
-echo $this->Form->input('state', array(
+				'placeholder' => 'City'
 
-	'div' => array('class' => 'control-group state'),
+			));
 
-	'label' => array(
+			echo $this->Form->input('state', array(
 
-		'class' => 'control-label'
+				'div' => array('class' => 'control-group state'),
 
-	),
+				'label' => array(
 
-	'id' => 'form-users-add-state',
+					'class' => 'control-label'
 
-	'options' => array(
-		'' => 'Select',
-		'AL' => 'Alabama',
-		'AK' => 'Alaska',
-		'AZ' => 'Arizona',
-		'AR' => 'Arkansas',
-		'CA' => 'California',
-		'CO' => 'Colorado',
-		'CT' => 'Connecticut',
-		'DE' => 'Delaware',
-		'FL' => 'Florida',
-		'GA' => 'Georgia',
-		'HI' => 'Hawaii',
-		'ID' => 'Idaho',
-		'IL' => 'Illinois',
-		'IN' => 'Indiana',
-		'IA' => 'Iowa',
-		'KS' => 'Kansas',
-		'KY' => 'Kentucky',
-		'LA' => 'Louisiana',
-		'ME' => 'Maine',
-		'MD' => 'Maryland',
-		'MA' => 'Massachusetts',
-		'MI' => 'Michigan',
-		'MN' => 'Minnesota',
-		'MS' => 'Mississippi',
-		'MO' => 'Missouri',
-		'MT' => 'Montana',
-		'NE' => 'Nebraska',
-		'NV' => 'Nevada',
-		'NH' => 'New Hampshire',
-		'NJ' => 'New Jersey',
-		'NM' => 'New Mexico',
-		'NY' => 'New York',
-		'NC' => 'North Carolina',
-		'ND' => 'North Dakota',
-		'OH' => 'Ohio',
-		'OK' => 'Oklahoma',
-		'OR' => 'Oregon',
-		'PA' => 'Pennsylvania',
-		'RI' => 'Rhode Island',
-		'SC' => 'South Carolina',
-		'SD' => 'South Dakota',
-		'TN' => 'Tennessee',
-		'TX' => 'Texas',
-		'UT' => 'Utah',
-		'VT' => 'Vermont',
-		'VA' => 'Virginia',
-		'WA' => 'Washington',
-		'WV' => 'West Virginia',
-		'WI' => 'Wisconsin',
-		'WY' => 'Wyoming'
-	)
+				),
 
-));
+				'id' => 'form-users-add-state',
 
-echo $this->Form->input('zipcode', array(
+				'options' => array(
+					'' => 'Select',
+					'AL' => 'Alabama',
+					'AK' => 'Alaska',
+					'AZ' => 'Arizona',
+					'AR' => 'Arkansas',
+					'CA' => 'California',
+					'CO' => 'Colorado',
+					'CT' => 'Connecticut',
+					'DE' => 'Delaware',
+					'FL' => 'Florida',
+					'GA' => 'Georgia',
+					'HI' => 'Hawaii',
+					'ID' => 'Idaho',
+					'IL' => 'Illinois',
+					'IN' => 'Indiana',
+					'IA' => 'Iowa',
+					'KS' => 'Kansas',
+					'KY' => 'Kentucky',
+					'LA' => 'Louisiana',
+					'ME' => 'Maine',
+					'MD' => 'Maryland',
+					'MA' => 'Massachusetts',
+					'MI' => 'Michigan',
+					'MN' => 'Minnesota',
+					'MS' => 'Mississippi',
+					'MO' => 'Missouri',
+					'MT' => 'Montana',
+					'NE' => 'Nebraska',
+					'NV' => 'Nevada',
+					'NH' => 'New Hampshire',
+					'NJ' => 'New Jersey',
+					'NM' => 'New Mexico',
+					'NY' => 'New York',
+					'NC' => 'North Carolina',
+					'ND' => 'North Dakota',
+					'OH' => 'Ohio',
+					'OK' => 'Oklahoma',
+					'OR' => 'Oregon',
+					'PA' => 'Pennsylvania',
+					'RI' => 'Rhode Island',
+					'SC' => 'South Carolina',
+					'SD' => 'South Dakota',
+					'TN' => 'Tennessee',
+					'TX' => 'Texas',
+					'UT' => 'Utah',
+					'VT' => 'Vermont',
+					'VA' => 'Virginia',
+					'WA' => 'Washington',
+					'WV' => 'West Virginia',
+					'WI' => 'Wisconsin',
+					'WY' => 'Wyoming'
+				)
 
-	'label' => array('class' => 'control-label'),
+			));
 
-	'id' => 'form-users-add-zipcode',
+			echo $this->Form->input('zipcode', array(
 
-	'placeholder' => 'Zipcode'
+				'label' => array('class' => 'control-label'),
 
-));
+				'id' => 'form-users-add-zipcode',
 
-?>
+				'placeholder' => 'Zipcode'
 
-<div class="control-group">
+			));
 
-	<div class="controls action">
+			?>
 
-		<?php
+			<div class="control-group">
 
-		echo $this->Form->button(
+				<div class="controls action">
 
-			'Sign up',
+					<?php
 
-			array(
+					echo $this->Form->button(
 
-				'type' => 'submit',
+						'Sign up',
 
-				'div' => false,
+						array(
 
-				'class' => 'btn'
+							'type' => 'submit',
 
-			)
+							'div' => false,
 
-		);
+							'class' => 'btn'
 
-		?>
+						)
+
+					);
+
+					?>
+
+				</div>
+
+			</div>
+
+			<?php echo $this->Form->end(); ?>
+
+			</div>
+
+			</div>
+
+			</div>
+
+			<p class="already">
+
+				Already have an account?
+
+				<?php echo $this->Html->link('Sign in', array('controller' => 'users', 'action' => 'login'), array('title' => 'Sign in')); ?>
+
+			</p>
+
+		</div>
 
 	</div>
-
-</div>
-
-<?php echo $this->Form->end(); ?>
-
-</div>
-
-</div>
-
-</div>
-
-<p class="already">
-
-	Already have an account?
-
-	<?php echo $this->Html->link('Sign in', array('controller' => 'users', 'action' => 'login'), array('title' => 'Sign in')); ?>
-
-</p>
-
-</div>
-
-</div>
 
 </div>
