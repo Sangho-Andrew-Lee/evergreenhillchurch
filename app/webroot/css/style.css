@@ -294,9 +294,16 @@ table { background: #fff; }
 .logo { margin-top: 20px; }
 
 .logo img {
-	display: inline-block; 
-	max-width: 50px;
+	/*display: inline-block; */
+	max-width: 190px;
+    margin: auto;
 }
+
+/*.logo img.center {*/
+    /*display: block;*/
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+/*}*/
 
 .logo h1 {
 	position: relative;
@@ -304,7 +311,7 @@ table { background: #fff; }
 	left: 5px;
 	display: inline-block; 
 	margin: 0;
-	font-size: 40px;
+	font-size: 35px;
 	font-family: 'Open Sans Condensed', sans-serif;
 	font-weight: 700;
 	color: #565656;

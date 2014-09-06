@@ -48,7 +48,7 @@
             <!-- Header top left content contact -->
             <div class="header-contact">
                 <!-- Contact number -->
-                <span><i class="fa fa-phone red"></i> 888-888-8888</span>
+                <span><i class="fa fa-phone red"></i> 310-516-0430</span>
             </div>
         </div>
         <div class="col-md-6 col-sm-6">
@@ -78,7 +78,7 @@
                 <!-- Heading -->
                 <h1>ChefMemo</h1>
                 <!-- Paragraph -->
-                <p>Ultimate Collection of Recipes.</p>
+                <p>EVERGREEN HILL PRESBYTERIAN CHURCH</p>
             </div>
         </a>
     </div>
