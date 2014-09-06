@@ -19,101 +19,101 @@ $this->end();
 <div class="main-content">
 
     <!-- Recipes -->
-    <div class="dishes padd">
-        <div class="container">
-            <!-- Default Heading -->
-            <div class="default-heading">
-                <!-- Crown image -->
-                <?php echo $this->Html->image('crown.png', array('class' => 'img-responsive', 'alt' => '')); ?>
-                <!-- Heading -->
-                <h2>New Recipes</h2>
-                <!-- Paragraph -->
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <!-- Border -->
-                <div class="border"></div>
-            </div>
-            <div class="row">
-                <?php
-                    for ($i = 0; $i < 4; $i++):
-                        $newRecipe = $newRecipes[$i];
-                ?>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="dishes-item-container">
-                            <!-- Image Frame -->
-                            <div class="img-frame">
-                                <!-- Image -->
-                                <?php echo $this->Html->image($newRecipe['image']['lg'], array('class' => 'img-responsive', 'alt' => '')); ?>
-                                <!-- Block for on hover effect to image -->
-                                <div class="img-frame-hover">
-                                    <!-- Hover Icon -->
-                                    <?php echo $this->Html->link('<i class="fa fa-cutlery"></i>', array('controller' => 'recipes', 'action' => 'view', 'id' => $newRecipe['id']), array('escape' => false)); ?>
-                                </div>
-                            </div>
-                            <!-- Dish Details -->
-                            <div class="dish-details">
-                                <!-- Heading -->
-                                <h3><?php echo $newRecipe['title']; ?></h3>
-                                <!-- Paragraph -->
-                                <p>At vero eos et accusal gusto for ides residuum lores.</p>
-                                <!-- Button -->
-                                <?php echo $this->Html->link('Read more', array('controller' => 'recipes', 'action' => 'view', 'id' => $newRecipe['id']), array('class' => 'btn btn-danger btn-sm', 'escape' => false)); ?>
-                            </div>
-                        </div>
-                    </div>
-                <?php endfor; ?>
-            </div>
-        </div>
-    </div>
+<!--    <div class="dishes padd">-->
+<!--        <div class="container">-->
+<!--            <!-- Default Heading --> <!-- -->
+<!--            <div class="default-heading">-->
+<!--                <!-- Crown image --><!-- -->
+<!--                --><?php //echo $this->Html->image('crown.png', array('class' => 'img-responsive', 'alt' => '')); ?>
+<!--                <!-- Heading --><!-- -->
+<!--                <h2>New Recipes</h2>-->
+<!--                <!-- Paragraph --><!-- -->
+<!--                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>-->
+<!--                <!-- Border --><!-- -->
+<!--                <div class="border"></div>-->
+<!--            </div>-->
+<!--            <div class="row">-->
+<!--                --><?php
+//                    for ($i = 0; $i < 4; $i++):
+//                        $newRecipe = $newRecipes[$i];
+//                ?>
+<!--                    <div class="col-md-3 col-sm-6">-->
+<!--                        <div class="dishes-item-container">-->
+<!--                            <!-- Image Frame --><!-- -->
+<!--                            <div class="img-frame">-->
+<!--                                <!-- Image --><!-- -->
+<!--                                --><?php //echo $this->Html->image($newRecipe['image']['lg'], array('class' => 'img-responsive', 'alt' => '')); ?>
+<!--                                <!-- Block for on hover effect to image --> <!-- -->
+<!--                                <div class="img-frame-hover">-->
+<!--                                    <!-- Hover Icon --> <!-- -->
+<!--                                    --><?php //echo $this->Html->link('<i class="fa fa-cutlery"></i>', array('controller' => 'recipes', 'action' => 'view', 'id' => $newRecipe['id']), array('escape' => false)); ?>
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <!-- Dish Details --> <!-- -->
+<!--                            <div class="dish-details">-->
+<!--                                <!-- Heading --> <!-- -->
+<!--                                <h3>--><?php //echo $newRecipe['title']; ?><!--</h3>-->
+<!--                                <!-- Paragraph --> <!-- -->
+<!--                                <p>At vero eos et accusal gusto for ides residuum lores.</p>-->
+<!--                                <!-- Button --> <!-- -->
+<!--                                --><?php //echo $this->Html->link('Read more', array('controller' => 'recipes', 'action' => 'view', 'id' => $newRecipe['id']), array('class' => 'btn btn-danger btn-sm', 'escape' => false)); ?>
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                --><?php //endfor; ?>
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
     <!-- /Recipes -->
 
     <!-- Categories -->
-    <div class="menu padd">
-        <div class="container">
-            <!-- Default Heading -->
-            <div class="default-heading">
-                <!-- Crown image -->
-                <?php echo $this->Html->image('crown.png', array('class' => 'img-responsive', 'alt' => '')); ?>
-                <!-- Heading -->
-                <h2>Popular Recipes</h2>
-                <!-- Paragraph -->
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <!-- Border -->
-                <div class="border"></div>
-            </div>
-            <!-- Menu content container -->
-            <div class="menu-container">
-                <div class="row">
-                    <?php foreach ($popularRecipes as $popularCategory => $popularRecipesArr): ?>
-                    <div class="col-md-4 col-sm-4">
-                        <!-- Menu header -->
-                        <div class="menu-head">
-                            <!-- Image for menu item -->
-                            <?php echo $this->Html->image($popularCategories[$popularCategory]['image'], array('class' => 'menu-img img-responsive img-thumbnail', 'alt' => '')); ?>
-                            <!-- Menu title / Heading -->
-                            <h3><?php echo $popularCategory; ?></h3>
-                            <!-- Border for above heading -->
-                            <div class="title-border <?php echo $popularCategories[$popularCategory]['class']; ?>"></div>
-                        </div>
-                        <!-- Menu item details -->
-                        <div class="menu-details <?php echo $popularCategories[$popularCategory]['class']; ?>">
-                            <!-- Menu list -->
-                            <ul class="list-unstyled">
-                                <?php foreach($popularRecipesArr as $popularRecipe): ?>
-                                    <li>
-                                        <div class="menu-list-item">
-                                            <?php echo $this->Html->link('<i class="fa fa-angle-right"></i>' . $popularRecipe['title'], array('controller' => 'recipes', 'action' => 'view', 'id' => $popularRecipe['id']), array('escape' => false)); ?>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                    </li>
-                                <?php endforeach; ?>
-                            </ul>
-                        </div><!-- / Menu details end -->
-                    </div>
-                    <?php endforeach; ?>
-                </div>
-            </div> <!-- /Menu container end -->
-        </div>
-    </div>
+<!--    <div class="menu padd">-->
+<!--        <div class="container">-->
+<!--            <!-- Default Heading --> <!-- -->
+<!--            <div class="default-heading">-->
+<!--                <!-- Crown image --> <!-- -->
+<!--                --><?php //echo $this->Html->image('crown.png', array('class' => 'img-responsive', 'alt' => '')); ?>
+<!--                <!-- Heading --> <!-- -->
+<!--                <h2>Popular Recipes</h2>-->
+<!--                <!-- Paragraph --> <!--  -->
+<!--                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>-->
+<!--                <!-- Border --> <!-- -->
+<!--                <div class="border"></div>-->
+<!--            </div>-->
+<!--            <!-- Menu content container --> <!-- -->
+<!--            <div class="menu-container">-->
+<!--                <div class="row">-->
+<!--                    --><?php //foreach ($popularRecipes as $popularCategory => $popularRecipesArr): ?>
+<!--                    <div class="col-md-4 col-sm-4">-->
+<!--                        <!-- Menu header --> <!--  -->
+<!--                        <div class="menu-head">-->
+<!--                            <!-- Image for menu item --><!--  -->
+<!--                            --><?php //echo $this->Html->image($popularCategories[$popularCategory]['image'], array('class' => 'menu-img img-responsive img-thumbnail', 'alt' => '')); ?>
+<!--                            <!-- Menu title / Heading --> <!-- -->
+<!--                            <h3>--><?php //echo $popularCategory; ?><!--</h3>-->
+<!--                            <!-- Border for above heading --> <!-- -->
+<!--                            <div class="title-border --><?php //echo $popularCategories[$popularCategory]['class']; ?><!--"></div>-->
+<!--                        </div>-->
+<!--                        <!-- Menu item details --><!-- -->
+<!--                        <div class="menu-details --><?php //echo $popularCategories[$popularCategory]['class']; ?><!--">-->
+<!--                            <!-- Menu list --> <!-- -->
+<!--                            <ul class="list-unstyled">-->
+<!--                                --><?php //foreach($popularRecipesArr as $popularRecipe): ?>
+<!--                                    <li>-->
+<!--                                        <div class="menu-list-item">-->
+<!--                                            --><?php //echo $this->Html->link('<i class="fa fa-angle-right"></i>' . $popularRecipe['title'], array('controller' => 'recipes', 'action' => 'view', 'id' => $popularRecipe['id']), array('escape' => false)); ?>
+<!--                                            <div class="clearfix"></div>-->
+<!--                                        </div>-->
+<!--                                    </li>-->
+<!--                                --><?php //endforeach; ?>
+<!--                            </ul>-->
+<!--                        </div><!-- / Menu details end --><!--  -->
+<!--                    </div>-->
+<!--                    --><?php //endforeach; ?>
+<!--                </div>-->
+<!--            </div> <!-- /Menu container end --><!--  -->
+<!--        </div>-->
+<!--    </div>-->
     <!-- /Categories -->
 
     <!-- Testimonial -->
