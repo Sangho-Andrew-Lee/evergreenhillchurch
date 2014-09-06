@@ -1,3 +1,5 @@
 # Created by .gitignore support plugin (hsz.mobi)
 app/tmp
-.idea/
+.idea/*
+.idea/workspace.xml
+/.idea/
