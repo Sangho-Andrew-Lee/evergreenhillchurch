@@ -34,7 +34,7 @@ class HomeController extends AppController {
 
 		$this->set(array(
 
-			'title_for_layout' => 'Ever Greenhill Church'
+			'title_for_layout' => 'EverGreen Hill Presbyterian Church'
 
 		));
 
