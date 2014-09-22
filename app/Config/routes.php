@@ -19,35 +19,6 @@
  * @since         CakePHP(tm) v 0.2.9
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
-//Router::connect('/recipe/:id', array('controller' => 'recipes', 'action' => 'view'), array('pass' => array('id')));
-//
-//Router::connect('/recipe/external/:id', array('controller' => 'recipes', 'action' => 'external'), array('pass' => array('id')));
-//
-//Router::connect('/c/:category', array('controller' => 'recipes', 'action' => 'category'), array('pass' => array('category')));
-//
-//Router::connect('/about-us', array('controller' => 'pages', 'action' => 'staticPage', 'about_us'));
-//
-//Router::connect('/contact-us', array('controller' => 'pages', 'action' => 'staticPage', 'contact_us'));
-//
-//Router::connect('/privacy-policy', array('controller' => 'pages', 'action' => 'staticPage', 'privacy_policy'));
-//
-//Router::connect('/blogs', array('controller' => 'pages', 'action' => 'staticPage', 'blogs'));
-//
-//Router::connect('/error', array('controller' => 'pages', 'action' => 'staticPage', 'error'));
-//
-//Router::connect('/general', array('controller' => 'pages', 'action' => 'staticPage', 'general'));
-//
-//Router::connect('/nutrition', array('controller' => 'pages', 'action' => 'staticPage', 'nutrition'));
-//
-//Router::connect('/blog', array('controller' => 'pages', 'action' => 'staticPage', 'blog_single'));
-//
-//Router::connect('/components', array('controller' => 'pages', 'action' => 'staticPage', 'components'));
-//
-//Router::connect('/terms', array('controller' => 'pages', 'action' => 'staticPage', 'terms'));
-//
-//Router::connect('/search/*', array('controller' => 'search', 'action' => 'index'));
-
-
 
 /* *
  *
