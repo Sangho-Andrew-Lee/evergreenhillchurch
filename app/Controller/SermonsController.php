@@ -43,4 +43,16 @@ class SermonsController extends AppController {
     public function sunday(){
         echo "HELLO WORLD";
     }
+    public function wednesday(){
+
+    }
+    public function biblestudy(){
+
+    }
+    public function historyofredemption(){
+
+    }
+    public function events(){
+
+    }
 }
