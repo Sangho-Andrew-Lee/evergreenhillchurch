@@ -26,7 +26,7 @@ class SermonsController extends AppController {
 
 		parent::beforeFilter();
 
-		$this->Auth->allow('index');
+		$this->Auth->allow('index', 'sunday');
 
 	}
 
