@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="16b65d0e-bef9-4c17-9970-3937d06b0cc7" name="Default" comment="Adding the sign-up feature and login feature">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/View/Pages/directions.ctp" afterPath="$PROJECT_DIR$/app/View/Pages/directions.ctp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/View/Pages/our_church.ctp" afterPath="$PROJECT_DIR$/app/View/Pages/our_church.ctp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/View/Pages/service_times.ctp" afterPath="$PROJECT_DIR$/app/View/Pages/service_times.ctp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/View/Pages/staff.ctp" afterPath="$PROJECT_DIR$/app/View/Pages/staff.ctp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="evergreenhillchurch.iws" />
@@ -43,22 +40,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="our_church.ctp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="our_church.ctp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/View/Pages/our_church.ctp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.01945946" vertical-offset="0" max-vertical-offset="925">
+            <state vertical-scroll-proportion="-0.6666667" vertical-offset="0" max-vertical-offset="576">
               <caret line="1" column="28" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="service_times.ctp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="service_times.ctp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/View/Pages/service_times.ctp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.6666667" vertical-offset="0" max-vertical-offset="576">
-              <caret line="1" column="27" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
-              <folding />
+            <state vertical-scroll-proportion="0.70054054" vertical-offset="0" max-vertical-offset="925">
+              <caret line="36" column="25" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -123,8 +127,8 @@
         <option value="$PROJECT_DIR$/app/webroot/css/style.css" />
         <option value="$PROJECT_DIR$/app/View/Pages/directions.ctp" />
         <option value="$PROJECT_DIR$/app/View/Pages/staff.ctp" />
-        <option value="$PROJECT_DIR$/app/View/Pages/service_times.ctp" />
         <option value="$PROJECT_DIR$/app/View/Pages/our_church.ctp" />
+        <option value="$PROJECT_DIR$/app/View/Pages/service_times.ctp" />
       </list>
     </option>
   </component>
@@ -769,19 +773,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/View/Pages/service_times.ctp">
+    <entry file="file://$PROJECT_DIR$/app/View/Pages/our_church.ctp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.6666667" vertical-offset="0" max-vertical-offset="576">
-          <caret line="1" column="27" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
+          <caret line="1" column="28" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/View/Pages/our_church.ctp">
+    <entry file="file://$PROJECT_DIR$/app/View/Pages/service_times.ctp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.01945946" vertical-offset="0" max-vertical-offset="925">
-          <caret line="1" column="28" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
-          <folding />
+        <state vertical-scroll-proportion="0.70054054" vertical-offset="0" max-vertical-offset="925">
+          <caret line="36" column="25" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
