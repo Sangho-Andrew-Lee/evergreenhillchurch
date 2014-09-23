@@ -81,35 +81,17 @@ class PagesController extends AppController {
         $title = 'ChefMemo';
 
         switch($page) {
-            case 'about_us':
-                $title = 'ChefMemo - Ultimate Collection of Recipes and more';
+            case 'staff':
+                $title = '늘푸른 동산 교회 - 섬기는 이들';
                 break;
-            case 'contact_us':
-                $title = 'ChefMemo - Contact Us';
+            case 'our_church':
+                $title = '늘푸른 동산 교회 - 늘푸른 동산 교회는';
                 break;
-            case 'privacy_policy':
-                $title = 'ChefMemo - Privacy Policy';
+            case 'directions':
+                $title = '늘푸른 동산 교회 - 오시는 길';
                 break;
-            case 'terms':
-                $title = 'ChefMemo - Terms';
-                break;
-            case 'blogs':
-                $title = 'ChefMemo - Blogs';
-                break;
-            case 'blog_single':
-                $title = 'ChefMemo - Blog';
-                break;
-            case 'error':
-                $title = 'ChefMemo - Error';
-                break;
-            case 'general':
-                $title = 'ChefMemo - General';
-                break;
-            case 'nutrition':
-                $title = 'ChefMemo - Nutrition Info';
-                break;
-            case 'components':
-                $title = 'ChefMemo - Components';
+            case 'service_times':
+                $title = '늘푸른 동산 교회 - 예배시간';
                 break;
         }
 
