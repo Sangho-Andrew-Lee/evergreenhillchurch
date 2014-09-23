@@ -27,11 +27,13 @@
  * */
 Router::connect('/staff', array('controller' => 'pages', 'action' => 'staticPage', 'staff'));
 
-Router::connect('/our_church', array('controller' => 'pages', 'action' => 'staticPage', 'our_church'));
+Router::connect('/our-church', array('controller' => 'pages', 'action' => 'staticPage', 'our_church'));
 
 Router::connect('/directions', array('controller' => 'pages', 'action' => 'staticPage', 'directions'));
 
-Router::connect('/service_times', array('controller' => 'pages', 'action' => 'staticPage', 'service_times'));
+Router::connect('/service-times', array('controller' => 'pages', 'action' => 'staticPage', 'service_times'));
+
+//Router::connect('/sermons/:action', array('controller' => 'home', 'action' => 'index'));
 
 Router::connect('/', array('controller' => 'home', 'action' => 'index'));
 
