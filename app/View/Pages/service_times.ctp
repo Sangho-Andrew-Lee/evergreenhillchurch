@@ -1,5 +1,5 @@
 <!-- Banner Start -->
-<div class="banner-service_times padd">
+<div class="banner-serviceTimes padd">
     <div class="container">
         <!-- Image -->
         <?php echo $this->Html->image('crown-white.png', array('class' => 'img-responsive', 'alt' => '')); ?>

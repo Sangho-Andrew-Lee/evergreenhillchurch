@@ -1,5 +1,5 @@
 <!-- Banner Start -->
-<div class="banner padd">
+<div class="banner-directions padd">
     <div class="container">
         <!-- Image -->
         <?php echo $this->Html->image('crown-white.png', array('class' => 'img-responsive', 'alt' => '')); ?>
