@@ -1121,22 +1121,22 @@ div.ppt { display:none !important; }
  */
 
 .banner-serviceTimes {
-	background: url('../img/evergreenhill_youthretreat.jpg') center center repeat-x;
+	background: url('../img/evergreenhill/banner9.jpg') center center repeat-x;
 	text-align: center;
 }
 
 .banner-ourChurch {
-    background: url('../img/evergreenhill_youthchior.jpg') center center repeat-x;
+    background: url('../img/evergreenhill/banner5.jpg') center center repeat-x;
     text-align: center;
 }
 
 .banner-directions {
-    background: url('../img/evergreenhill_newchoir.jpg') center center repeat-x;
+    background: url('../img/evergreenhill/banner7.jpg') center center repeat-x;
     text-align: center;
 }
 
 .banner-staff {
-    background: url('../img/evergreenhill_choir2.jpg') center center repeat-x;
+    background: url('../img/evergreenhill/banner8.jpg') center center repeat-x;
     text-align: center;
 }
 

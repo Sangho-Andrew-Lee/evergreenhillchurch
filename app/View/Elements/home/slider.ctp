@@ -171,7 +171,7 @@
                      data-endspeed="500"
                      data-endeasing="Power4.easeIn"
                      style="z-index: 3">
-                     <?php echo $this->Html->image('evergreenhill_sidebanner2.jpg', array('class' => 'img-responsive', 'alt' => '')); ?>
+                     <?php echo $this->Html->image('evergreenhill_guitar4.jpg', array('class' => 'img-responsive', 'alt' => '')); ?>
                 </div>
                 <!-- LAYER NR. 2.1 -->
                 <div class="tp-caption customin customout"
@@ -185,7 +185,7 @@
                      data-endspeed="500"
                      data-endeasing="Power4.easeIn"
                      style="z-index: 3">
-                     <?php echo $this->Html->image('evergreenhill_seniorsermon2.jpg', array('class' => 'img-responsive', 'alt' => '')); ?>
+                     <?php echo $this->Html->image('evergreenhill_children4.jpg', array('class' => 'img-responsive', 'alt' => '')); ?>
                 </div>
                 <!-- LAYER NR. 2.2 -->
                 <div class="tp-caption customin customout"
@@ -199,7 +199,7 @@
                      data-endspeed="500"
                      data-endeasing="Power4.easeIn"
                      style="z-index: 3">
-                     <?php echo $this->Html->image('evergreenhill_seniorpastors2.jpg', array('class' => 'img-responsive', 'alt' => '')); ?>
+                     <?php echo $this->Html->image('evergreenhill_lunch4.jpg', array('class' => 'img-responsive', 'alt' => '')); ?>
                 </div>
                 <!-- LAYER NR. 2.3 -->
                 <div class="tp-caption sft"
@@ -335,7 +335,7 @@
                      data-endspeed="300"
                      data-endeasing="Power4.easeIn"
                      data-captionhidden="off">
-                     <?php echo $this->Html->image('evergreenhill_guitar4.jpg', array('class' => 'img-responsive', 'alt' => ''));?>
+                     <?php echo $this->Html->image('evergreenhill_sidebanner2.jpg', array('class' => 'img-responsive', 'alt' => ''));?>
                 </div>
                 <!-- LAYERS NR. 2 -->
                 <div class="tp-caption lfl"
@@ -347,7 +347,7 @@
                      data-endspeed="300"
                      data-endeasing="Power4.easeIn"
                      data-captionhidden="off">
-                     <?php echo $this->Html->image('evergreenhill_children4.jpg', array('class' => 'img-responsive', 'alt' => ''));?>
+                     <?php echo $this->Html->image('evergreenhill_seniorsermon2.jpg', array('class' => 'img-responsive', 'alt' => ''));?>
                 </div>
                 <!-- LAYERS NR. 3 -->
                 <div class="tp-caption lfl"
@@ -359,7 +359,7 @@
                      data-endspeed="300"
                      data-endeasing="Power4.easeIn"
                      data-captionhidden="off">
-                    <?php echo $this->Html->image('evergreenhill_lunch4.jpg', array('class' => 'img-responsive', 'alt' => ''));?>
+                    <?php echo $this->Html->image('evergreenhill_seniorpastors2.jpg', array('class' => 'img-responsive', 'alt' => ''));?>
                 </div>
                 <!-- LAYERS NR. 4 -->
                 <div class="tp-caption sfr  thinheadline_dark white"
